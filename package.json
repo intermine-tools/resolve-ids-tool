@@ -1,0 +1,38 @@
+{
+  "name": "id-resolver-tool",
+  "version": "0.1.0",
+  "description": "A tool to resolve ids in intermine-steps",
+  "main": "server.js",
+  "config": {
+    "port": 5000
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.3"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower --allow-root install",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexkalderimis/id-resolver-tool.git"
+  },
+  "keywords": [
+    "intermine",
+    "steps",
+    "widget"
+  ],
+  "author": "Alex Kalderimis",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/alexkalderimis/id-resolver-tool/issues"
+  },
+  "homepage": "https://github.com/alexkalderimis/id-resolver-tool",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "express": ">=3.4.8",
+    "bower": "~1.2.8"
+  }
+}
