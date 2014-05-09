@@ -19,6 +19,8 @@
     "tests"
   ],
   "dependencies": {
-    "jschannel": "mozilla/jschannel"
+    "jschannel": "mozilla/jschannel",
+    "imjs": "~3.2.2",
+    "spin.js": "~2.0.1"
   }
 }
