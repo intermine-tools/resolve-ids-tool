@@ -78,12 +78,15 @@ chan.bind('init', function (trans, params) {
 
   function handleIds (objectIds) {
     chan.notify({
-      method: 'has-ids',
+      method: 'wants',
       params: {
-        objectIds: objectIds,
-        type: request.type,
-        service: {
-          root: service.root
+        what: 'list',
+        data: {
+          objectIds: objectIds,
+          type: request.type,
+          service: {
+            root: service.root
+          }
         }
       }
     });
@@ -91,11 +94,14 @@ chan.bind('init', function (trans, params) {
 
   function portal (object, el) {
     chan.notify({
-      method: 'has-item',
+      method: 'wants',
       params: {
-        object: object,
-        service: {
-          root: service.root
+        what: 'item-details',
+        data: {
+          object: object,
+          service: {
+            root: service.root
+          }
         }
       }
     });
