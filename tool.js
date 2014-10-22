@@ -59,11 +59,11 @@ chan.bind('init', function (trans, params) {
   var jobbing = service.resolveIds(request);
 
   jobbing.then(function (job) {
-    job.poll().then(withResults);
+    job.poll().then(withResults)
+              .then(job.del, job.del); // Always clean up.
   });
 
   function withResults (results) {
-    console.log("Booyah: ", results);
     var mr400 = require('component-400');
 
     mr400({
@@ -73,17 +73,20 @@ chan.bind('init', function (trans, params) {
       portal: portal,
       options: options
     });
-    
+
   }
 
   function handleIds (objectIds) {
     chan.notify({
-      method: 'has-ids',
+      method: 'wants',
       params: {
-        objectIds: objectIds,
-        type: request.type,
-        service: {
-          root: service.root
+        what: 'list',
+        data: {
+          objectIds: objectIds,
+          type: request.type,
+          service: {
+            root: service.root
+          }
         }
       }
     });
@@ -91,11 +94,14 @@ chan.bind('init', function (trans, params) {
 
   function portal (object, el) {
     chan.notify({
-      method: 'has-item',
+      method: 'wants',
       params: {
-        object: object,
-        service: {
-          root: service.root
+        what: 'item-details',
+        data: {
+          object: object,
+          service: {
+            root: service.root
+          }
         }
       }
     });
