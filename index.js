@@ -21,6 +21,10 @@ chan.bind('has-ids', function (trans, data) {
   handleIds(data.objectIds);
 });
 
+chan.bind('wants', function (trans, data) {
+  console.log("Wants a list", data);
+});
+
 chan.bind('has-item', function (trans, data) {
   console.log("HAS ITEM!!");
   portal(data.object);

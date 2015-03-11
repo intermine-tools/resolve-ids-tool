@@ -8,6 +8,11 @@
     <link
         rel="stylesheet"
         type="text/css"
+        href="http://cdn.intermine.org/css/font-awesome/4.x/css/font-awesome.min.css"
+        media="all">
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="http://cdn.intermine.org/js/intermine/apps-c/component-400/0.5.0/css/component-400.bundle.min.css"
         media="all">
     <script src="http://cdn.intermine.org/js/intermine/apps-c/component-400/0.5.0/js/component-400.bundle.min.js"></script>
@@ -18,6 +23,18 @@
     </script>
     <script src="bower_components/jschannel/src/jschannel.js">
     </script>
+    <script charset="UTF-8"
+            type="text/javascript"
+            src="bower_components/underscore/underscore.js">
+    </script>
+    <script charset="UTF-8"
+            type="text/javascript"
+            src="bower_components/backbone/backbone.js">
+    </script>
+    <script charset="UTF-8"
+            type="text/javascript"
+            src="bower_components/backbone.nativeview/backbone.nativeview.js">
+    </script>
 
     <script src="bower_components/spin.js/spin.js">
     </script>
@@ -27,10 +44,74 @@
 
   <body>
 
+    <div id="list-details"></div>
     <div id="id-resolver">
         <div id="spinner"></div>
     </div>
 
     <script type="text/javascript" src="tool.js"></script>
+
+    <!-- Templates -->
+    <script type="text/template" id="name-template">
+      <form>
+        <div class="row">
+          <div class="three columns">
+            <label for="listname"
+                   class="right inline">List name</label>
+          </div>
+          <div class="nine columns">
+            <input name="listname" class="form-control"
+                   value="<%- name %>"
+                   type="text"
+                   placeholder="Enter a name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="three columns">
+            <label for="description"
+                   class="right inline">Description</label>
+          </div>
+          <div class="nine columns">
+            <input name="description" class="form-control"
+                   value="<%- description %>"
+                   type="text"
+                   placeholder="Enter an optional description">
+          </div>
+        </div>
+        <div class="row">
+          <div class="three columns">
+            <label for="description"
+                   class="right inline">Tags</label>
+          </div>
+          <div class="nine columns">
+            <div class="row">
+              <div class="active-tags six columns">
+              </div>
+              <div class="six columns">
+                <div class="row collapse">
+                    <div class="eight mobile-three columns">
+                      <input class="new-tag" type="text" />
+                    </div>
+                    <div class="four mobile-one columns">
+                      <a class="button expand postfix add-tag">add tags</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </script>
+
+    <style>
+      .active-tags .label {
+          margin-right: 1em;
+          display: inline-block;
+      }
+      .active-tags .label i.fa {
+          cursor: pointer;
+      }
+    </style>
+
   </body>
 </html>
