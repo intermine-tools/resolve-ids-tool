@@ -37,6 +37,5 @@
   },
   "_source": "git://github.com/intermine/imjs.git",
   "_target": "~3.2.2",
-  "_originalSource": "imjs",
-  "_direct": true
+  "_originalSource": "imjs"
 }
