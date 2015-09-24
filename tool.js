@@ -29,6 +29,7 @@ function main () {
     top: '250px',
     radius: 100,
     length: 100,
+    scale:0.2,
     width: 50,
     lines: 12
   });
@@ -301,4 +302,3 @@ function main () {
 
   });
 }
-
