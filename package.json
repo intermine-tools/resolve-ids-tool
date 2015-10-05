@@ -25,7 +25,7 @@
     "widget"
   ],
   "author": "Alex Kalderimis",
-  "license": "Apache2",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/alexkalderimis/id-resolver-tool/issues"
   },
